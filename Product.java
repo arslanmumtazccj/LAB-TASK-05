@@ -1,8 +1,8 @@
 public class Product{
 	private static String id;
 	private static int countId = 0;
-	private static double maxPrice;
-	private static double minPrice;
+	private static double maxPrice = 0;
+	private static double minPrice = 0;
 	private String name;
 	private double price;
 	private int qty;
@@ -14,16 +14,16 @@ public class Product{
 	this.qty = qty;
 	countId++;
 	id = String.format("P%03d",countId);
-	maxPrice = 0;
-	minPrice = 0;
 	if(maxPrice < price){
 	maxPrice = price;
 	}
 	if(minPrice > price){
 	minPrice = price;
 	}
+	else if(minPrice == 0){
+	minPrice = price;
 }
-
+}
 	public void displayProduct(){
 	System.out.println("Name : " + name);
 	System.out.println("Price : " + price);
